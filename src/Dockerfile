@@ -8,7 +8,7 @@ WORKDIR /usr/local/searxng
 RUN apk add --no-cache py3-yaml
 
 # Add the Python script to modify the settings.yml file
-COPY modify_settings.py /usr/local/bin/modify_settings.py
+COPY src/modify_settings.py /usr/local/bin/modify_settings.py
 
 # Run the Python script to modify settings.yml
 RUN python3 /usr/local/bin/modify_settings.py
