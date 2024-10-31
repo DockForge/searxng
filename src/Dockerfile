@@ -4,8 +4,8 @@ FROM searxng/searxng:latest AS builder
 # Set the working directory to where the settings.yml is located
 WORKDIR /usr/local/searxng
 
-# Install pyyaml using Alpine's package manager (apk) to handle YAML modifications
-RUN apk add --no-cache py3-yaml
+# Install pyyaml and curl using Alpine's package manager (apk)
+RUN apk add --no-cache py3-yaml curl
 
 # Add the Python script to modify the settings.yml file
 COPY src/modify_settings.py /usr/local/bin/modify_settings.py
